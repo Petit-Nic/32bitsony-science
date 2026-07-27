@@ -1,16 +1,16 @@
 ---
-title: 8-bit Nintendo Science
+title: 32-bit Sony Ranking
 ---
 <section class="header">
   <div class="left">
-    <img src="assets/images/nes.gif">
+    <img src="assets/images/psx.gif">
   </div>
   <div class="title">
-    <h1>An Exhaustive and Definitive Ranking of All Nintendo Entertainment System Games Released in North America, Where We Determine Which Games Are the Absolute Pinnacle of 8-Bit Excellence and Which Ones Make You Question Life Choices, Ranked from Best to Worst</h1>
+    <h1>A (someday) complete ranking of all Sony Playsation games (in languages that I can understand)</h1>
   </div>
   <div class="right">
     <a id="random" title="Watch a random game">
-      <img src="assets/images/dancing-baby.gif">
+      <img src="assets/images/dancing-crash.gif">
     </a>
   </div>
 </section>
@@ -23,7 +23,6 @@ title: 8-bit Nintendo Science
         <th class="title">Game</th>
         <th class="year" data-sort-method='dotsep'>Year</th>
         <th class="dev">Developer(s)</th>
-        <th class="license" data-sort-method='dotsep'><img class="seal" src="assets/images/licensed.png"></th>
         <th class="ep" data-sort-method='dotsep'>Ep<span>isode</span></th>
         <th class="timestamp" data-sort-method='dotsep'>Time</th>
       </tr>
@@ -89,10 +88,11 @@ title: 8-bit Nintendo Science
         <td class="title">
           <div class="title-wrapper">
             {% if screenshot %}
+              <img class="screenshot" loading="lazy" data-action="zoom"
+                src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/refs/heads/master/Named_Boxarts/{{ screenshot }}"
+              >
               <img class="screenshot titlescreen" loading="lazy" data-action="zoom"
-                src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/refs/heads/master/Named_Titles/{{ screenshot }}"
-              ><img class="screenshot" loading="lazy" data-action="zoom"
-                src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/refs/heads/master/Named_Snaps/{{ screenshot }}"
+                src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/refs/heads/master/Named_Titles/{{ screenshot }}"
               >
             {% endif %}
             <div class="name" title="{{ wiki_data.title }}">
@@ -111,13 +111,6 @@ title: 8-bit Nintendo Science
                 <li>{{company}}</li>
               {% endfor %}
             </ul>
-          {% endif %}
-        </td>
-        <td class="license" data-sort="{{ licensed | to_integer }}.{{ forloop.index }}">
-          {% if dev == "Panesian" %}
-            <img class="seal" src="assets/images/warren.png">
-          {% elsif licensed %}
-            <img class="seal" src="assets/images/licensed.png">
           {% endif %}
         </td>
         <td class="ep" data-sort="{{ item.ep }}.0.{{ forloop.index }}">
@@ -142,14 +135,15 @@ title: 8-bit Nintendo Science
       {% endfor %}
     </tbody>
   </table>
-  <img class="garfield" src="assets/images/garfield.png">
 </section>
 
-<img class="divider" src="assets/images/electricbar.gif">
-<center>
-  <a class="test-link" href="/test.html"><img src="assets/images/test.gif"></a>
-</center>
+
 <section class="about">
+  <h2>The list is
+    <img src="assets/images/under-construction.gif" width="120">.
+    See the <a href="./remaining.html">remaining</a> games.
+  </h2>
+
   <p>
     Maintained by fans, this archive documents the findings of Dr. Jeff Gerstmann, Man of Science, following his exhaustive NES ranking experiment. While this specific study has reached its conclusion, you can observe Jeff's ongoing scientific pursuits at <a href="https://www.twitch.tv/jeffgerstmann">twitch.tv/jeffgerstmann</a> or review the historical data on <a href="https://www.youtube.com/playlist?list=PLDKeuvgV0sxZ_xs4zUvQcMEV-LTjSf-Ok">youtube.com/TheJeffGerstmannShow</a>.
   </p>
