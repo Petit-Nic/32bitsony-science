@@ -2,10 +2,10 @@
 title: Remaining Games
 robots: noindex
 ---
-  {% assign remaining_l = site.data.licensed_games | where: "hidden", false %}
-  {% assign remaining_u = site.data.unlicensed_games | where: "hidden", false %}
+  {% assign remaining_l = site.data.licensed_games | where: 'hidden', FALSE%}
+  {% assign remaining_u = site.data.unlicensed_games | where: 'hidden', FALSE %}
 
-  {% for item in site.data.list %}
+{% for item in site.data.list %}
     {% assign wiki_data = nil %}
     {% assign licensed = true %}
 
@@ -43,10 +43,9 @@ robots: noindex
     {% endif %}
   {% endfor %}
 
-
   <h1>{{ remaining_l.size | plus: remaining_u.size }} Games Pending Scientific Analysis</h1>
 
-  <h2>Licensed Games</h2>
+  <h2>US Released Games</h2>
   <table border="1">
     <thead>
       <tr>
@@ -58,10 +57,10 @@ robots: noindex
     </thead>
     {% for item in remaining_l %}
       <tr>
-        <td>{{ item.title | newline_to_br }}</td>
-        <td>{{ item.developer | newline_to_br }}</td>
-        <td>{{ item.publisher | newline_to_br }}</td>
-        <td>{{ item.year | newline_to_br }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.developer }}</td>
+        <td>{{ item.publisher}}</td>
+        <td>{{ item.date }}</td>
       </tr>
     {% endfor %}
   </table>
@@ -71,15 +70,17 @@ robots: noindex
     <thead>
       <tr>
         <th>Game</th>
-        <th>Publisher(s)</th>
+        <th>Developer/Publisher</th>
+        <th>Region</th>
         <th>Release</th>
       </tr>
     </thead>
     {% for item in remaining_u %}
       <tr>
-        <td>{{ item.title | newline_to_br }}</td>
-        <td>{{ item.publisher | newline_to_br }}</td>
-        <td>{{ item.year | newline_to_br }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.developer }}</td>
+        <td>{{ item. country }}</td>
+        <td>{{ item.date }}</td>
       </tr>
     {% endfor %}
   </table>

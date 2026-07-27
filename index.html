@@ -21,7 +21,7 @@ title: 32-bit Sony Ranking
       <tr>
         <th class="rank" data-sort-method='number' data-sort-default>#</th>
         <th class="title">Game</th>
-        <th class="year" data-sort-method='dotsep'>Year</th>
+        <th class="date" data-sort-method='dotsep'>Release Date</th>
         <th class="dev">Developer(s)</th>
         <th class="ep" data-sort-method='dotsep'>Ep<span>isode</span></th>
         <th class="timestamp" data-sort-method='dotsep'>Time</th>
@@ -100,16 +100,13 @@ title: 32-bit Sony Ranking
             </div>
           </div>
         </td>
-        <td class="year" data-sort="{{ wiki_data.year }}.{{ forloop.index }}">
-          {{ wiki_data.year }}
+        <td class="date" data-sort="{{ wiki_data.date }}.{{ forloop.index }}">
+          {{ wiki_data.date }}
         </td>
         <td class="dev">
           {% if dev %}
-            {% assign companies = dev | newline_to_br | split: "<br />" %}
             <ul>
-              {% for company in companies %}
-                <li>{{company}}</li>
-              {% endfor %}
+              {{dev}}
             </ul>
           {% endif %}
         </td>
