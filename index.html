@@ -1,0 +1,160 @@
+---
+title: 8-bit Nintendo Science
+---
+<section class="header">
+  <div class="left">
+    <img src="assets/images/nes.gif">
+  </div>
+  <div class="title">
+    <h1>An Exhaustive and Definitive Ranking of All Nintendo Entertainment System Games Released in North America, Where We Determine Which Games Are the Absolute Pinnacle of 8-Bit Excellence and Which Ones Make You Question Life Choices, Ranked from Best to Worst</h1>
+  </div>
+  <div class="right">
+    <a id="random" title="Watch a random game">
+      <img src="assets/images/dancing-baby.gif">
+    </a>
+  </div>
+</section>
+
+<section class="the-list">
+  <table id="ranking" border="1">
+    <thead>
+      <tr>
+        <th class="rank" data-sort-method='number' data-sort-default>#</th>
+        <th class="title">Game</th>
+        <th class="year" data-sort-method='dotsep'>Year</th>
+        <th class="dev">Developer(s)</th>
+        <th class="license" data-sort-method='dotsep'><img class="seal" src="assets/images/licensed.png"></th>
+        <th class="ep" data-sort-method='dotsep'>Ep<span>isode</span></th>
+        <th class="timestamp" data-sort-method='dotsep'>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in site.data.list %}
+      {% assign wiki_data = nil %}
+      {% assign screenshot = nil %}
+      {% assign licensed = true %}
+
+      {% if item.wiki_line %}
+        {% assign line = item.wiki_line | split: "_" %}
+        {% assign i = line[1] | to_integer %}
+        {% if line[0] == "l" %}
+          {% assign wiki_data = site.data.licensed_games[i] %}
+        {% else %}
+          {% assign wiki_data = site.data.unlicensed_games[i] %}
+          {% if wiki_data %}{% assign licensed = false %}{% endif %}
+        {% endif %}
+      {% endif %}
+
+      {% unless wiki_data %}
+        {% assign wiki_data = site.data.licensed_games | where: "title", item.game | first %}
+      {% endunless %}
+      {% unless wiki_data %}
+        {% assign wiki_data = site.data.unlicensed_games | where: "title", item.game | first %}
+        {% if wiki_data %}{% assign licensed = false %}{% endif %}
+      {% endunless %}
+      {% unless wiki_data %}
+        {% assign wiki_data = site.data.licensed_games | where_exp: "game", "game.title contains item.game" | first %}
+      {% endunless %}
+      {% unless wiki_data %}
+        {% assign wiki_data = site.data.unlicensed_games | where_exp: "game", "game.title contains item.game" | first %}
+        {% if wiki_data %}{% assign licensed = false %}{% endif %}
+      {% endunless %}
+
+      {% assign dev = wiki_data.developer %}
+      {% unless dev %}
+        {% assign dev = wiki_data.publisher %}
+      {% endunless %}
+
+      {% if item.screenshot %}
+        {% assign screenshot = item.screenshot %}
+      {% else %}
+        {% assign search = item.game | replace: ":", " -" %}
+        {% assign libretro_file = site.data.libretro | where_exp: "i", "i.filename contains search" | first %}
+        {% if libretro_file %}
+          {% assign screenshot = libretro_file.filename %}
+        {% endif %}
+      {% endif %}
+      <tr>
+        <td class="rank" data-sort="{{ forloop.index }}">
+          {% if forloop.index == 1 %}
+            <img class="medal" src="assets/images/gold.gif">
+          {% elsif forloop.index == 2 %}
+            <img class="medal" src="assets/images/silver.gif">
+          {% elsif forloop.index == 3 %}
+            <img class="medal" src="assets/images/bronze.gif">
+          {% else %}
+            {{ forloop.index }}
+          {% endif %}
+        </td>
+        <td class="title">
+          <div class="title-wrapper">
+            {% if screenshot %}
+              <img class="screenshot titlescreen" loading="lazy" data-action="zoom"
+                src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/refs/heads/master/Named_Titles/{{ screenshot }}"
+              ><img class="screenshot" loading="lazy" data-action="zoom"
+                src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/refs/heads/master/Named_Snaps/{{ screenshot }}"
+              >
+            {% endif %}
+            <div class="name" title="{{ wiki_data.title }}">
+              {{ item.game }}
+            </div>
+          </div>
+        </td>
+        <td class="year" data-sort="{{ wiki_data.year }}.{{ forloop.index }}">
+          {{ wiki_data.year }}
+        </td>
+        <td class="dev">
+          {% if dev %}
+            {% assign companies = dev | newline_to_br | split: "<br />" %}
+            <ul>
+              {% for company in companies %}
+                <li>{{company}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </td>
+        <td class="license" data-sort="{{ licensed | to_integer }}.{{ forloop.index }}">
+          {% if dev == "Panesian" %}
+            <img class="seal" src="assets/images/warren.png">
+          {% elsif licensed %}
+            <img class="seal" src="assets/images/licensed.png">
+          {% endif %}
+        </td>
+        <td class="ep" data-sort="{{ item.ep }}.0.{{ forloop.index }}">
+          {% if item.ytid %}
+            <a href="https://www.youtube.com/watch?v={{ item.ytid }}">
+              <img class="thumbnail"  loading="lazy"
+                src="https://wsrv.nl/?url=i.ytimg.com/vi/{{ item.ytid }}/default.jpg"
+              >{{ item.ep | replace: ".", "-" }}
+            </a>
+          {% else %}
+            {{ item.ep | replace: ".", "-" }}
+          {% endif %}
+        </td>
+        <td class="timestamp" data-sort="{{ item.ep }}.0.{{ item.seconds }}">
+          {% if item.ytid and item.seconds %}
+            <a href="https://www.youtube.com/watch?v={{ item.ytid }}&t={{ item.seconds }}s">
+              {{ item.seconds | date: "%H:%M:%S"}}
+            </a>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <img class="garfield" src="assets/images/garfield.png">
+</section>
+
+<img class="divider" src="assets/images/electricbar.gif">
+<center>
+  <a class="test-link" href="/test.html"><img src="assets/images/test.gif"></a>
+</center>
+<section class="about">
+  <p>
+    Maintained by fans, this archive documents the findings of Dr. Jeff Gerstmann, Man of Science, following his exhaustive NES ranking experiment. While this specific study has reached its conclusion, you can observe Jeff's ongoing scientific pursuits at <a href="https://www.twitch.tv/jeffgerstmann">twitch.tv/jeffgerstmann</a> or review the historical data on <a href="https://www.youtube.com/playlist?list=PLDKeuvgV0sxZ_xs4zUvQcMEV-LTjSf-Ok">youtube.com/TheJeffGerstmannShow</a>.
+  </p>
+  <p>If any information is missing or incorrect, consider submitting a fix to our <a href="https://github.com/vNakamura/8bitnintendo-science">GitHub repository</a>.
+  </p>
+  <p>
+    Game details (developer, release date, ...) from <a href="https://en.wikipedia.org/wiki/List_of_Nintendo_Entertainment_System_games">Wikipedia</a>. Game images from <a href="https://github.com/libretro-thumbnails/libretro-thumbnails">Libretro</a>.
+</section>

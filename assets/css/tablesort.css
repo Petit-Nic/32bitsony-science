@@ -1,0 +1,33 @@
+th[role=columnheader]:not([data-sort-method="none"]) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not([data-sort-method="none"]):after {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 1ch;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #CCCCCC transparent;
+	opacity: 0.3;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not([data-sort-method="none"]):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not([data-sort-method="none"]):after {
+	visibility: visible;
+	opacity: 0.8;
+}
+
+th[role=columnheader]:not([data-sort-method="none"]):hover:after {
+	visibility: visible;
+	opacity: 1;
+}
