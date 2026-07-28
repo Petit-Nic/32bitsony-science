@@ -1,11 +1,7 @@
-![](/assets/images/nes.gif)
-# 8bit Nintendo Science
+![](/assets/images/psx.gif)
+# Ranking 32 bit Sony games
 
-This is a fan-maintained Jekyll site hosted on GitHub Pages that tracks Dr. Jeff Gerstmann’s scientific mission to rank all NES games released in North America. ([YouTube](https://www.youtube.com/playlist?list=PLDKeuvgV0sxZ_xs4zUvQcMEV-LTjSf-Ok)).
-
-## Contributing
-
-Feel free to open an issue or pull request to help improve the site.
+This is a Jekyll site hosted on GitHub Pages tracking my (Nic's) progress in ranking every single game in the PSX library.
 
 The main content of this site is on [/_data/list.csv](/_data/list.csv).
 
@@ -22,7 +18,7 @@ The template will try to find the content for `screenshot` and `wiki_line` autom
 
 Due to GitHub Pages restrictions (no custom code), this is limited to simple string matching using Jekyll’s `where_exp` filter. When the automatic search fails, you'll have to manually add the content.
 
-You can search for the content in [data.html](https://8bitnintendo.science/data.html).
+You can search for the content in [data.html](https://rank32bitsony.com/data.html).
 
 ## Running Locally
 
@@ -30,11 +26,6 @@ To run the site locally with Jekyll:
 
 1. Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](https://bundler.io/) installed.
 2. Clone the repository:
-
-   ```bash
-   git clone https://github.com/vNakamura/8bitnintendo-science.git
-   cd 8bitnintendo-science
-   ```
 
 3. Install dependencies:
    ```bash

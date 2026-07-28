@@ -2,8 +2,8 @@
 title: Remaining Games
 robots: noindex
 ---
-  {% assign remaining_l = site.data.licensed_games | where: 'hidden', FALSE%}
-  {% assign remaining_u = site.data.unlicensed_games | where: 'hidden', FALSE %}
+  {% assign remaining_l = site.data.us_releases | where: 'hidden', FALSE%}
+  {% assign remaining_u = site.data.imports | where: 'hidden', FALSE %}
 
 {% for item in site.data.list %}
     {% assign wiki_data = nil %}
@@ -13,25 +13,25 @@ robots: noindex
       {% assign line = item.wiki_line | split: "_" %}
       {% assign i = line[1] | to_integer %}
       {% if line[0] == "l" %}
-        {% assign wiki_data = site.data.licensed_games[i] %}
+        {% assign wiki_data = site.data.us_releases[i] %}
       {% else %}
-        {% assign wiki_data = site.data.unlicensed_games[i] %}
+        {% assign wiki_data = site.data.imports[i] %}
         {% if wiki_data %}{% assign licensed = false %}{% endif %}
       {% endif %}
     {% endif %}
 
     {% unless wiki_data %}
-      {% assign wiki_data = site.data.licensed_games | where: "title", item.game | first %}
+      {% assign wiki_data = site.data.us_releases | where: "title", item.game | first %}
     {% endunless %}
     {% unless wiki_data %}
-      {% assign wiki_data = site.data.unlicensed_games | where: "title", item.game | first %}
+      {% assign wiki_data = site.data.imports | where: "title", item.game | first %}
       {% if wiki_data %}{% assign licensed = false %}{% endif %}
     {% endunless %}
     {% unless wiki_data %}
-      {% assign wiki_data = site.data.licensed_games | where_exp: "game", "game.title contains item.game" | first %}
+      {% assign wiki_data = site.data.us_releases | where_exp: "game", "game.title contains item.game" | first %}
     {% endunless %}
     {% unless wiki_data %}
-      {% assign wiki_data = site.data.unlicensed_games | where_exp: "game", "game.title contains item.game" | first %}
+      {% assign wiki_data = site.data.imports | where_exp: "game", "game.title contains item.game" | first %}
       {% if wiki_data %}{% assign licensed = false %}{% endif %}
     {% endunless %}
 
@@ -45,7 +45,7 @@ robots: noindex
 
   <h1>{{ remaining_l.size | plus: remaining_u.size }} Games Pending Scientific Analysis</h1>
 
-  <h2>US Released Games</h2>
+  <h2>US Releases</h2>
   <table border="1">
     <thead>
       <tr>
@@ -65,7 +65,7 @@ robots: noindex
     {% endfor %}
   </table>
   {% if remaining_u.size > 0 %}
-  <h2>Imported Games</h2>
+  <h2>Imported Games (with fan translations, where appropriate)</h2>
   <table border="1">
     <thead>
       <tr>

@@ -13,7 +13,7 @@ robots: noindex
   </tbody>
 </table>
 
-<h1>Licensed</h1>
+<h1>US Releases</h1>
 <table border="1">
   <thead>
     <tr>
@@ -22,7 +22,7 @@ robots: noindex
     </tr>
   </thead>
   <tbody>
-    {% for game in site.data.licensed_games %}
+    {% for game in site.data.us_releases %}
       <tr>
         <td>{{ game.title | newline_to_br }}</td>
         <td>l_{{ forloop.index0 }}</td>
@@ -31,7 +31,7 @@ robots: noindex
   </tbody>
 </table>
 
-<h1>Unlicensed</h1>
+<h1>Imports</h1>
 <table border="1">
   <thead>
     <tr>
@@ -40,7 +40,7 @@ robots: noindex
     </tr>
   </thead>
   <tbody>
-    {% for game in site.data.unlicensed_games %}
+    {% for game in site.data.imports %}
       <tr>
         <td>{{ game.title | newline_to_br }}</td>
         <td>u_{{ forloop.index0 }}</td>

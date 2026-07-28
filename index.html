@@ -1,17 +1,18 @@
 ---
 title: 32-bit Sony Ranking
 ---
+<div class="title">
+  <h1>A <span style="font-size: 0.8rem">(someday)</span> complete ranking of all US-released Sony Playsation games</h1>
+  <h3>(as well as any games exclusive to the PAL region, or the JP region if there is a fan translation)</h3>
+</div>
+<br><br>
+
 <section class="header">
   <div class="left">
-    <img src="assets/images/psx.gif">
-  </div>
-  <div class="title">
-    <h1>A (someday) complete ranking of all Sony Playsation games (in languages that I can understand)</h1>
+    <img width=400px src="assets/images/psx.gif">
   </div>
   <div class="right">
-    <a id="random" title="Watch a random game">
-      <img src="assets/images/dancing-crash.gif">
-    </a>
+    <img width=400px src="assets/images/dancing-crash.gif">
   </div>
 </section>
 
@@ -21,6 +22,7 @@ title: 32-bit Sony Ranking
       <tr>
         <th class="rank" data-sort-method='number' data-sort-default>#</th>
         <th class="title">Game</th>
+        <th class="region">Region</th>
         <th class="date" data-sort-method='dotsep'>Release Date</th>
         <th class="dev">Developer(s)</th>
         <th class="ep" data-sort-method='dotsep'>Ep<span>isode</span></th>
@@ -36,27 +38,30 @@ title: 32-bit Sony Ranking
       {% if item.wiki_line %}
         {% assign line = item.wiki_line | split: "_" %}
         {% assign i = line[1] | to_integer %}
-        {% if line[0] == "l" %}
-          {% assign wiki_data = site.data.licensed_games[i] %}
+        {% if line[0] == "u" %}
+          {% assign wiki_data = site.data.us_releases[i] %}
         {% else %}
-          {% assign wiki_data = site.data.unlicensed_games[i] %}
+          {% assign wiki_data = site.data.imports[i] %}
           {% if wiki_data %}{% assign licensed = false %}{% endif %}
         {% endif %}
       {% endif %}
 
       {% unless wiki_data %}
-        {% assign wiki_data = site.data.licensed_games | where: "title", item.game | first %}
+        {% assign wiki_data = site.data.us_releases | where: "title", item.game | first %}
       {% endunless %}
       {% unless wiki_data %}
-        {% assign wiki_data = site.data.unlicensed_games | where: "title", item.game | first %}
+        {% assign wiki_data = site.data.imports | where: "title", item.game | first %}
         {% if wiki_data %}{% assign licensed = false %}{% endif %}
       {% endunless %}
       {% unless wiki_data %}
-        {% assign wiki_data = site.data.licensed_games | where_exp: "game", "game.title contains item.game" | first %}
+        {% assign wiki_data = site.data.us_releases | where_exp: "game", "game.title contains item.game" | first %}
       {% endunless %}
       {% unless wiki_data %}
-        {% assign wiki_data = site.data.unlicensed_games | where_exp: "game", "game.title contains item.game" | first %}
+        {% assign wiki_data = site.data.imports | where_exp: "game", "game.title contains item.game" | first %}
         {% if wiki_data %}{% assign licensed = false %}{% endif %}
+      {% endunless %}
+      {% unless licensed %}
+      {% assign region = wiki_data.country %}
       {% endunless %}
 
       {% assign dev = wiki_data.developer %}
@@ -91,14 +96,25 @@ title: 32-bit Sony Ranking
               <img class="screenshot" loading="lazy" data-action="zoom"
                 src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/refs/heads/master/Named_Boxarts/{{ screenshot }}"
               >
-              <img class="screenshot titlescreen" loading="lazy" data-action="zoom"
+            {% endif %}
+            <div class="name" title="{{ wiki_data.title }}">
+            {{ item.game }}
+            </div>
+            {% if screenshot %}
+              <img class="screenshot titlescreen" loading="lazy" data-action="zoom" text-align="right"
                 src="https://wsrv.nl/?h=240&output=png&url=raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/refs/heads/master/Named_Titles/{{ screenshot }}"
               >
             {% endif %}
-            <div class="name" title="{{ wiki_data.title }}">
-              {{ item.game }}
-            </div>
           </div>
+        </td>
+        <td class="country">
+          {% if licensed %}
+          <h2>&#x1F1FA;&#x1F1F8;</h2>
+          {% elsif region == 'JP'%}
+          <h2>&#x1f1ef;&#x1f1f5;</h2>
+          {% else %}
+          <h2>&#127466;&#127482;</h2>
+          {% endif %}
         </td>
         <td class="date" data-sort="{{ wiki_data.date }}.{{ forloop.index }}">
           {{ wiki_data.date }}
@@ -142,10 +158,7 @@ title: 32-bit Sony Ranking
   </h2>
 
   <p>
-    Maintained by fans, this archive documents the findings of Dr. Jeff Gerstmann, Man of Science, following his exhaustive NES ranking experiment. While this specific study has reached its conclusion, you can observe Jeff's ongoing scientific pursuits at <a href="https://www.twitch.tv/jeffgerstmann">twitch.tv/jeffgerstmann</a> or review the historical data on <a href="https://www.youtube.com/playlist?list=PLDKeuvgV0sxZ_xs4zUvQcMEV-LTjSf-Ok">youtube.com/TheJeffGerstmannShow</a>.
-  </p>
-  <p>If any information is missing or incorrect, consider submitting a fix to our <a href="https://github.com/vNakamura/8bitnintendo-science">GitHub repository</a>.
-  </p>
-  <p>
+    This website is keeping track (somewhat in real time) of the rankings found at  <a href="https://www.youtube.com/playlist?list=PLdzRNPeduEAo">youtube.com/@Retro-GamesWithNic</a>.<br>
+    If any information is missing or incorrect, <a href="mailto:gameswithnic@gmail.com">send me an email</a>.<br>
     Game details (developer, release date, ...) from <a href="https://en.wikipedia.org/wiki/List_of_Nintendo_Entertainment_System_games">Wikipedia</a>. Game images from <a href="https://github.com/libretro-thumbnails/libretro-thumbnails">Libretro</a>.
 </section>
