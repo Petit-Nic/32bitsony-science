@@ -12,7 +12,7 @@ robots: noindex
     {% if item.wiki_line %}
       {% assign line = item.wiki_line | split: "_" %}
       {% assign i = line[1] | to_integer %}
-      {% if line[0] == "l" %}
+      {% if line[0] == "u" %}
         {% assign wiki_data = site.data.us_releases[i] %}
       {% else %}
         {% assign wiki_data = site.data.imports[i] %}
