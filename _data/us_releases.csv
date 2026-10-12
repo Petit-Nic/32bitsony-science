@@ -1,51 +1,51 @@
-title,developer,publisher,date,hidden
-Agile Warrior F-111X,Black Ops Entertainment,Virgin Interactive,21-Nov-95,FALSE
-Air Combat,"Namco, Arsys Software",Namco,9-Sep-95,FALSE
-Bases Loaded '96: Double Header,Jaleco Entertainment,Jaleco Entertainment,22-Dec-95,FALSE
-Battle Arena Toshinden,Tamsoft,SCEA,9-Sep-95,FALSE
-Criticom,Kronos Digital Entertainment,Vic Tokai,15-Nov-95,FALSE
-Cyber Sled,Namco,SCEE,18-Oct-95,FALSE
-Cyberspeed,Mindscape,Mindscape,15-Sep-95,FALSE
-Defcon 5,Millennium Interactive,Data East,24-Nov-95,FALSE
-Destruction Derby,Reflections Interactive,Psygnosis,16-Nov-95,FALSE
-Discworld,Perfect Entertainment,Psygnosis,15-Nov-95,FALSE
-Doom,Williams Entertainment,Williams Entertainment,16-Nov-95,FALSE
-ESPN Extreme Games,Sony Interactive Studios America,SCEA,9-Sep-95,FALSE
-FIFA 96,EA Canada,Electronic Arts,22-Nov-95,FALSE
-Geom Cube,Technos Japan,Technos,10-Dec-95,FALSE
-Gex,Crystal Dynamics,Crystal Dynamics,13-Dec-95,FALSE
-Goal Storm,Konami,Konami,22-Dec-95,FALSE
-Hi-Octane,Bullfrog Productions,"Electronic Arts, Electronic Arts Victor",1-Dec-95,FALSE
-Jumping Flash!,Exact,Sony Computer Entertainment,1-Nov-95,FALSE
-Jupiter Strike,Taito,Acclaim,6-Dec-95,FALSE
-Kileak: The DNA Imperative,Genki,SCEA,9-Sep-95,FALSE
-Lemmings 3D,Clockwork Games,Psygnosis,21-Nov-95,FALSE
-Loaded,Gremlin Interactive,Interplay,12-Dec-95,FALSE
-Mortal Kombat 3,Williams,SCEA,7-Oct-95,FALSE
-NBA In The Zone,Konami,Konami,14-Dec-95,FALSE
-NBA Jam: Tournament Edition,Iguana UK,Acclaim,9-Sep-95,FALSE
-NFL GameDay,Sony Interactive Studios America,SCEA,10-Nov-95,FALSE
-NHL FaceOff,Sony Interactive Studios America,SCEA,30-Nov-95,FALSE
-Novastorm,Psygnosis,Psygnosis,2-Nov-95,FALSE
-Off-World Interceptor Extreme,Crystal Dynamics,Crystal Dynamics,29-Sep-95,FALSE
-PGA Tour 96,Hitmen Productions,"Electronic Arts, Inc.",23-Sep-95,FALSE
-Power Serve 3D Tennis,SPS,Ocean Software,9-Sep-95,FALSE
-Primal Rage,Probe Entertainment,Time Warner Interactive,14-Nov-95,FALSE
-Rayman,Ubisoft,Ubisoft,9-Sep-95,FALSE
-Ridge Racer,Namco,SCEA,9-Sep-95,FALSE
-Road Rash,Apple Advanced Technology Group,Electronic Arts,29-Dec-95,FALSE
-Shockwave Assault,Apple Advanced Technology Group,Crystal Dynamics,5-Dec-95,FALSE
-Space Griffon VF-9,Panther Software,Atlus,25-Nov-95,FALSE
-Street Fighter: The Movie,Incredible Technologies,Acclaim,9-Sep-95,FALSE
-Tekken,Namco,Namco,8-Nov-95,FALSE
-The Raiden Project,Seibu Kaihatsu,"Seibu Kaihatsu, SCEA",9-Sep-95,FALSE
-Theme Park,"Bullfrog Productions, Ltd.",Electronic Arts,15-Oct-95,FALSE
-Total Eclipse Turbo,Crystal Dynamics,Crystal Dynamics,29-Aug-95,FALSE
-Twisted Metal,SCEA/Single Trac,SCEA,10-Nov-95,FALSE
-Viewpoint,Visual Concepts,Electronic Arts,28-Nov-95,FALSE
-Warhawk,SingleTrac,SCEA,10-Nov-95,FALSE
-Wipeout,Psygnosis,Psygnosis,21-Nov-95,FALSE
-WWF WrestleMania: The Arcade Game,Sculptured Software,Acclaim,18-Oct-95,FALSE
-X-COM: UFO Defense,MicroProse,MicroProse,25-Oct-95,FALSE
-Zero Divide,ZOOM Inc.,Time Warner Interactive,16-Dec-95,FALSE
-Zoop,Hookstone,Viacom New Media,20-Nov-95,FALSE
+title,developer,publisher,date,hidden,,date in std format (copy here)
+Agile Warrior F-111X,Black Ops Entertainment,Virgin Interactive,"November 21, 1995",FALSE,,21-Nov-95
+Air Combat,"Namco, Arsys Software",Namco,"September 9, 1995",FALSE,,9-Sep-95
+Bases Loaded '96: Double Header,Jaleco Entertainment,Jaleco Entertainment,"December 22, 1995",FALSE,,22-Dec-95
+Battle Arena Toshinden,Tamsoft,SCEA,"September 9, 1995",FALSE,,9-Sep-95
+Criticom,Kronos Digital Entertainment,Vic Tokai,"November 15, 1995",FALSE,,15-Nov-95
+Cyber Sled,Namco,SCEE,"October 18, 1995",FALSE,,18-Oct-95
+Cyberspeed,Mindscape,Mindscape,"September 15, 1995",FALSE,,15-Sep-95
+Defcon 5,Millennium Interactive,Data East,"November 24, 1995",FALSE,,24-Nov-95
+Destruction Derby,Reflections Interactive,Psygnosis,"November 16, 1995",FALSE,,16-Nov-95
+Discworld,Perfect Entertainment,Psygnosis,"November 15, 1995",FALSE,,15-Nov-95
+Doom,Williams Entertainment,Williams Entertainment,"November 16, 1995",FALSE,,16-Nov-95
+ESPN Extreme Games,Sony Interactive Studios America,SCEA,"September 9, 1995",FALSE,,9-Sep-95
+FIFA 96,EA Canada,Electronic Arts,"November 22, 1995",FALSE,,22-Nov-95
+Geom Cube,Technos Japan,Technos,"December 10, 1995",FALSE,,10-Dec-95
+Gex,Crystal Dynamics,Crystal Dynamics,"December 13, 1995",FALSE,,13-Dec-95
+Goal Storm,Konami,Konami,"December 22, 1995",FALSE,,22-Dec-95
+Hi-Octane,Bullfrog Productions,"Electronic Arts, Electronic Arts Victor","December 1, 1995",FALSE,,1-Dec-95
+Jumping Flash!,Exact,Sony Computer Entertainment,"November 1, 1995",FALSE,,1-Nov-95
+Jupiter Strike,Taito,Acclaim,"December 6, 1995",FALSE,,6-Dec-95
+Kileak: The DNA Imperative,Genki,SCEA,"September 9, 1995",FALSE,,9-Sep-95
+Lemmings 3D,Clockwork Games,Psygnosis,"November 21, 1995",FALSE,,21-Nov-95
+Loaded,Gremlin Interactive,Interplay,"December 12, 1995",FALSE,,12-Dec-95
+Mortal Kombat 3,Williams,SCEA,"October 7, 1995",FALSE,,7-Oct-95
+NBA In The Zone,Konami,Konami,"December 14, 1995",FALSE,,14-Dec-95
+NBA Jam: Tournament Edition,Iguana UK,Acclaim,"September 9, 1995",FALSE,,9-Sep-95
+NFL GameDay,Sony Interactive Studios America,SCEA,"November 10, 1995",FALSE,,10-Nov-95
+NHL FaceOff,Sony Interactive Studios America,SCEA,"November 30, 1995",FALSE,,30-Nov-95
+Novastorm,Psygnosis,Psygnosis,"November 2, 1995",FALSE,,2-Nov-95
+Off-World Interceptor Extreme,Crystal Dynamics,Crystal Dynamics,"September 29, 1995",FALSE,,29-Sep-95
+PGA Tour 96,Hitmen Productions,"Electronic Arts, Inc.","September 23, 1995",FALSE,,23-Sep-95
+Power Serve 3D Tennis,SPS,Ocean Software,"September 9, 1995",FALSE,,9-Sep-95
+Primal Rage,Probe Entertainment,Time Warner Interactive,"November 14, 1995",FALSE,,14-Nov-95
+Rayman,Ubisoft,Ubisoft,"September 9, 1995",FALSE,,9-Sep-95
+Ridge Racer,Namco,SCEA,"September 9, 1995",FALSE,,9-Sep-95
+Road Rash,Apple Advanced Technology Group,Electronic Arts,"December 29, 1995",FALSE,,29-Dec-95
+Shockwave Assault,Apple Advanced Technology Group,Crystal Dynamics,"December 5, 1995",FALSE,,5-Dec-95
+Space Griffon VF-9,Panther Software,Atlus,"November 25, 1995",FALSE,,25-Nov-95
+Street Fighter: The Movie,Incredible Technologies,Acclaim,"September 9, 1995",FALSE,,9-Sep-95
+Tekken,Namco,Namco,"November 8, 1995",FALSE,,8-Nov-95
+The Raiden Project,Seibu Kaihatsu,"Seibu Kaihatsu, SCEA","September 9, 1995",FALSE,,9-Sep-95
+Theme Park,"Bullfrog Productions, Ltd.",Electronic Arts,"October 15, 1995",FALSE,,15-Oct-95
+Total Eclipse Turbo,Crystal Dynamics,Crystal Dynamics,"August 29, 1995",FALSE,,29-Aug-95
+Twisted Metal,SCEA/Single Trac,SCEA,"November 10, 1995",FALSE,,10-Nov-95
+Viewpoint,Visual Concepts,Electronic Arts,"November 28, 1995",FALSE,,28-Nov-95
+Warhawk,SingleTrac,SCEA,"November 10, 1995",FALSE,,10-Nov-95
+Wipeout,Psygnosis,Psygnosis,"November 21, 1995",FALSE,,21-Nov-95
+WWF WrestleMania: The Arcade Game,Sculptured Software,Acclaim,"October 18, 1995",FALSE,,18-Oct-95
+X-COM: UFO Defense,MicroProse,MicroProse,"October 25, 1995",FALSE,,25-Oct-95
+Zero Divide,ZOOM Inc.,Time Warner Interactive,"September 9, 1995",FALSE,,9-Sep-95
+Zoop,Hookstone,Viacom New Media,"November 20, 1995",FALSE,,20-Nov-95
